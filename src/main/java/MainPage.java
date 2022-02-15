@@ -19,8 +19,7 @@ public class MainPage {
         return this;
     }
 
-    public MainPage confirmMessage(String message) {
+    public void confirmMessage(String message) {
         alert.shouldHave(Condition.exactText("Привет, " + message));
-        return this;
     }
 }

@@ -1,4 +1,6 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -7,9 +9,14 @@ public class SendGreetings {
     String message = "Hello";
     MainPage newGreetings = new MainPage();
 
-    @Test
-    public void main() {
+    @Before
+    public void init() {
         open(URL);
+    }
+
+    @Test
+    @DisplayName("Checking the sending of a message and its output in an alert")
+    public void check() {
         newGreetings.sendMessage(message).
                 confirmMessage(message);
     }
