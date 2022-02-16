@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SendGreetings {
     String URL = "https://n2oapp.net/sandbox/view/examples_greeting/#/";
-    String message = "Hello";
+    String name = "Tom Anderson";
     MainPage newGreetings = new MainPage();
 
     @Before
@@ -17,7 +17,7 @@ public class SendGreetings {
     @Test
     @DisplayName("Checking the sending of a message and its output in an alert")
     public void check() {
-        newGreetings.sendMessage(message).
-                confirmMessage(message);
+        newGreetings.sendMessage(name).
+                confirmName(name);
     }
 }
